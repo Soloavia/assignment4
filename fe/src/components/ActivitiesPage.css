@@ -1,0 +1,21 @@
+/* Make a responsive grid where all cards in a row share height */
+.activities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  align-items: stretch; /* stretch items to same height per row */
+}
+
+/* Ensure each card fills its grid cell and uses flex layout inside */
+.activity-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Let the card body grow and push footer down */
+.activity-card .card-body {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
